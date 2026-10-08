@@ -1,70 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-margin: 0;
-font-family: Georgia;
-background-color: beige;
+  margin: 0;
+  font-family: Georgia, serif;
+  background-color: rgb(249, 217, 238);
 }
 
 nav {
-background-color: pink;
-padding: 18px;
-text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+  padding: 16px 24px;
+  border: 1px solid lightpink;
+  border-radius: 12px;
+  background-color: rgb(245, 134, 156);
+  padding: 18px;
+  text-align: center;
+}
+nav h1 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: white;
 }
 
+#nav-ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-li a:hover {
+  background: beige;
+  color: burlywood;
+}
 nav a {
-color: beige;
-margin-right: 25px;
-text-decoration: none;
-font-size: 18px;
+  color: khaki;
+  margin-right: 25px;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 main {
-display: flex;
-margin: 45px;
-padding: 30px;
-background-color: gold;
-border-radius: 15px;
+  display: flex;
+  margin: 35px;
+  padding: 25px;
+  background-color:beige
+  border-radius: 20px;
 }
 
 .sidebar {
-width: 35%;
-padding: 15px;
+  width: 35%;
+  padding: 15px;
 }
 
 .sidebar img {
-width: 100%;
-border-radius: 20px;
+  width: 50%;
+  border-radius: 20px;
 }
 
 .content {
-width: 65%;
-padding: 25px;
-color: beige;
+  width: 65%;
+  padding: 25px;
+  color: peachpuff;
 }
 
 h1 {
-color: white;
-font-size: 25px;
-margin-top: 5px;
+  color: pink;
+  font-size: 40px;
+  margin-top: 5px;
 }
 
 p {
-font-size: 20px;
-line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 #interests {
-margin-top: 25px;
-padding: 20px;
-background-color: beige ;
-border-radius: 20px;
+  margin-top: 25px;
+  padding: 20px;
+  background-color: beige;
+  border-radius: 20px;
 }
 
 h2 {
-color: purple;
-font-size: 27px;
+  color: rgb(255, 163, 209);
+  font-size: 27px;
 }
 
 li {
-margin-bottom: 20px;
-font-size: 15px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+/* Portfolio styles */
+.content h1 {
+  color: pink;
+}
+
+#portfolio {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#portfolio li {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#portfolio a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(255, 118, 164);
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: peachpuff;
+  border: 1px solid hotpink;
+  border-radius: 12px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+#portfolio a:hover {
+  background: white;
+  color: rgb(255, 101, 152);
+  transform: translateX(4px);
+}
+
+#portfolio a::after {
+  content: "->";
+  font-size: 0.85rem;
+  opacity: 0.4;
+  transition: opacity 0.25s ease;
+  white-space: nowrap;
+}
+
+#portfolio a:hover::after {
+  opacity: 1;
 }
