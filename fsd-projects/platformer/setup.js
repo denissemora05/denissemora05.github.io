@@ -96,10 +96,10 @@ let halleImage;
 let animationDetails = {};
 
 var collectableList = {
-  database: { image: "images/collectables/database.png" },
-  diamond: { image: "images/collectables/diamond-head.png" },
-  grace: { image: "images/collectables/grace-head.png" },
-  kennedi: { image: "images/collectables/kennedi-head.png" },
+  database: { image: "https://storage.needpix.com/rsynced_images/door-575979_1280.png" },
+  diamond: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
+  grace: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
+  kennedi: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
   max: { image: "images/collectables/max-head.png" },
-  steve: { image: "images/collectables/steve-head.png" },
+  steve: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
 };

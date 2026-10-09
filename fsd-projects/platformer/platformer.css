@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  background-color: #202737;
+  background-color: #141414;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,10 +8,10 @@ body {
 }
 
 canvas {
-  background-color: lightblue;
+  background-color: rgb(10, 10, 10);
   margin: 20px;
   border-radius: 15px;
-  border: 5px solid rgba(118, 0, 233, 0.375);
+  border: 5px solid rgb(4, 4, 4);
   background-image: url(https://cdn.shopify.com/s/files/1/0267/0241/files/HoHwall.gif?v=1665020389);
   background-repeat: no-repeat;
   background-size: cover;
