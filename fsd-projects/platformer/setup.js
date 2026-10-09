@@ -97,9 +97,9 @@ let animationDetails = {};
 
 var collectableList = {
   database: { image: "https://storage.needpix.com/rsynced_images/door-575979_1280.png" },
-  diamond: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
-  grace: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
-  kennedi: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
+  diamond: { image: "https://freepngimg.com/save/22407-halloween-pumpkin-hd/512x512" },
+  grace: { image: "https://freepngimg.com/save/22407-halloween-pumpkin-hd/512x512" },
+  kennedi: { image: "https://freepngimg.com/save/22407-halloween-pumpkin-hd/512x512" },
   max: { image: "images/collectables/max-head.png" },
   steve: { image: "https://storage.needpix.com/rsynced_images/ghosts-1775548_1280.png" },
 };
