@@ -38,24 +38,25 @@ $(function () {
     // TODO 2 - Create Platforms
     createPlatform(100, 620, 100, 20, "lightblue");
     createPlatform(555, 490, 40, 20, "lightblue");
-    createPlatform(1200, 410, 50, 20, "lightblue");
-    createPlatform(1080, 310, 50, 20, "lightblue");
+    createPlatform(1200, 187, 50, 20, "lightblue");
+    createPlatform(1080, 287, 50, 20, "lightblue");
     createPlatform(100, 200, 150, 40, "black");
     createPlatform(90, 40, 10, 200, "black");
     createPlatform(720, 670, 700, 30, "black");
-    createPlatform(720, 500, 20, 200, "black");
-    createPlatform(720, 500, 600, 20, "black");
-    createPlatform(1200, 210, 50, 20, "lightblue");
+    createPlatform(720, 470, 20, 200, "black");
+    createPlatform(720, 470, 600, 20, "black");
+    createPlatform(1200, 387, 50, 20, "lightblue");
     createPlatform(260, 500, 40, 20, "lightblue", 250, 400, 2, 0);
-    createBadPlatform(1300, 670, 30, 20, "red")
-    createBadPlatform(1200, 670, 30, 20, "red")
-    createBadPlatform(1100, 670, 30, 20, "red")
-    createBadPlatform(1000, 670, 30, 20, "red")
-    createBadPlatform(900, 670, 30, 20, "red")
+    createPlatform(300, 200, 90, 20, "black",1340, 1340, 0, 500, 670, 1)
+    createBadPlatform(1300, 660, 30, 20, "red")
+    createBadPlatform(1200, 660, 30, 20, "red")
+    createBadPlatform(1100, 660, 30, 20, "red")
+    createBadPlatform(1000, 660, 30, 20, "red")
+    createBadPlatform(900, 660, 30, 20, "red")
     createPlatform(500, 110 , 100, 20, "lightblue", 250, 1080, 2);
-    createBadPlatform(970, 110, 20, 20, "red")
-    createBadPlatform(800, 110, 20, 20, "red")
-    createBadPlatform(645, 110, 20, 20, "red")
+    createBadPlatform(970, 100, 20, 20, "red")
+    createBadPlatform(800, 100, 20, 20, "red")
+    createBadPlatform(645, 100, 20, 20, "red")
   
 
     // TODO 3 - Create Collectables
