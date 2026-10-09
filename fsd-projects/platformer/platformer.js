@@ -51,10 +51,10 @@ $(function () {
     createBadPlatform(1200, 660, 30, 20, "red")
     createBadPlatform(1080, 660, 30, 20, "red")
     createBadPlatform(960, 660, 30, 20, "red")
-    createPlatform(500, 150 , 100, 20, "lightblue", 250, 1080, 2);
-    createBadPlatform(970, 130, 20, 20, "red")
-    createBadPlatform(800, 130, 20, 20, "red")
-    createBadPlatform(645, 130, 20, 20, "red")
+    createPlatform(500, 177 , 100, 20, "lightblue", 250, 1080, 2);
+    createBadPlatform(970, 169, 20, 20, "red")
+    createBadPlatform(800, 169, 20, 20, "red")
+    createBadPlatform(645, 169, 20, 20, "red")
   
 
     // TODO 3 - Create Collectables
@@ -62,10 +62,10 @@ $(function () {
     createCollectable("kennedi", 680, 350, 0, 0.7, 680, 800, 2);
     createCollectable("diamond", 750, 630, 0, 0.7, 750, 850, 2);
     createCollectable("steve", 1200, 110, 0, 0.7, 1100, 1300, 2);
-    createCollectable("steve", 400, 50, 0, 0.7, 200, 1000, 2);
+    createCollectable("steve", 400, 80, 0, 0.7, 200, 1000, 2);
 
     // TODO 4 - Create Cannons
-    createCannon("right", 400, 2500, 20, 20, 200, 500, 3);
+    createCannon("right", 400, 2500, 20, 20, 200, 500, 3);  
     createCannon("top", 400, 2000, 20, 20, 200, 400, 3);
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
