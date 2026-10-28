@@ -1,133 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Bouncing Box</title>
-    <script src="jquery.min.js"></script>
-    <style>
-      .box {
-        width: 180px;
-        height: 180px;
-        background-image:url(https://freepngimg.com/thumb/nyan_cat/99012-nyan-cat-png-image-high-quality.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border: 0;
-        font-size: 0;
-        user-select: none;
-        display: block;
-        position: absolute;
-        top: 100px;
-        left: 0px;
+
+<head>
+  <meta charset="utf-8" />
+  <title>Bouncing Box</title>
+  <script src="jquery.min.js"></script>
+  <style>
+    .box {
+      width: 230px;
+      height: 230px;
+      background-image: url(https://freepngimg.com/thumb/nyan_cat/99012-nyan-cat-png-image-high-quality.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      border: 0;
+      font-size: 0;
+      user-select: none;
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 0px;
+    }
+
+
+    .board {
+      height: 100vh;
+      position: relative;
+      background-image: url("https://cdn.pixabay.com/animation/2023/06/06/06/51/06-51-32-766_512.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+  </style>
+  <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+</head>
+
+<body class="board">
+  <!-- HTML for the box -->
+  <div class="box">?</div>
+
+  <script>
+    (function () {
+      "use strict";
+      /* global jQuery */
+
+      //////////////////////////////////////////////////////////////////
+      /////////////////// SETUP DO NOT DELETE //////////////////////////
+      //////////////////////////////////////////////////////////////////
+
+      var box = jQuery(".box"); // reference to the HTML .box element
+      var board = jQuery(".board"); // reference to the HTML .board element
+      var boardWidth = board.width(); // the maximum X-Coordinate of the screen
+      var boardHeight = jQuery(window).height();
+      // update the boardWidth variable when the window is resized
+      jQuery(window).on("resize", function () {
+        boardWidth = board.width();
+
+      });
+
+      // Every 50 milliseconds, call the update Function (see below)
+      setInterval(update, 50);
+
+      // Every time the box is clicked, call the handleBoxClick Function (see below)
+      box.on("click", handleBoxClick);
+
+      // moves the Box to a new position on the screen along the X-Axis
+      function moveBoxTo(newPositionX, newPositionY) {
+        box.css("left", newPositionX);
+        box.css("top", newPositionY);
       }
 
-    
-        .board { 
-  height: 100vh; 
-  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f36fda37-e6de-448a-a19e-c0ff2092d4e4/ddl5n59-23301f60-0c6e-40e5-9d6e-421a73bc4663.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9mMzZmZGEzNy1lNmRlLTQ0OGEtYTE5ZS1jMGZmMjA5MmQ0ZTQvZGRsNW41OS0yMzMwMWY2MC0wYzZlLTQwZTUtOWQ2ZS00MjFhNzNiYzQ2NjMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.llPVkPomn2nuXsKMTK0dryZ6lOJD6ICc9uJPgfq5XX0");
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
-  background-position: center; 
-}
+      // changes the text displayed on the Box
+      function changeBoxText(newText) {
+        box.text(newText);
+      }
 
-      
+      //////////////////////////////////////////////////////////////////
+      /////////////////// YOUR CODE BELOW HERE /////////////////////////
+      //////////////////////////////////////////////////////////////////
 
-    </style>
-    <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-  </head>
+      // TODO 2 - Variable declarations
 
-  <body class="board">
-    <!-- HTML for the box -->
-    <div class="box">?</div>
+      var points = 0;
+      var speedX = 5;
+      var positionX = 0;
+      var positionY = 0;
+      var speedY = 8;
+      var randNum = Math.random() * 100;
+      var missClicks = 20;
 
-    <script>
-      (function () {
-        "use strict";
-        /* global jQuery */
+      /**
+       * This Function will be called 20 times/second.
+       * Each time it is called, it should move the Box to a new location.
+       * If the box drifts off the screen, turn it around!
+       */
+      function update() {
+        moveBoxTo(positionX, positionY);
+        positionX += speedX;
+        positionY += speedY;
 
-        //////////////////////////////////////////////////////////////////
-        /////////////////// SETUP DO NOT DELETE //////////////////////////
-        //////////////////////////////////////////////////////////////////
-
-        var box = jQuery(".box"); // reference to the HTML .box element
-        var board = jQuery(".board"); // reference to the HTML .board element
-        var boardWidth = board.width(); // the maximum X-Coordinate of the screen
-    
-        // update the boardWidth variable when the window is resized
-        jQuery(window).on("resize", function () {
-          boardWidth = board.width();
-        });
-
-        // Every 50 milliseconds, call the update Function (see below)
-        setInterval(update, 50);
-
-        // Every time the box is clicked, call the handleBoxClick Function (see below)
-        box.on("click", handleBoxClick);
-
-        // moves the Box to a new position on the screen along the X-Axis
-        function moveBoxTo(newPositionX) {
-          box.css("left", newPositionX);
+        if (positionX + 70 > boardWidth) {
+          positionX = boardWidth - 70;
+          speedX *= -1;
         }
-
-        // changes the text displayed on the Box
-        function changeBoxText(newText) {
-          box.text(newText);
+        if (positionX < 0) {
+          speedX *= -1;
         }
-
-        //////////////////////////////////////////////////////////////////
-        /////////////////// YOUR CODE BELOW HERE /////////////////////////
-        //////////////////////////////////////////////////////////////////
-
-        // TODO 2 - Variable declarations
-      var positionX = 0
-var points = 0
-var speedX = 5
-var positionY = 0
-var speedY = 8
-var randNum = Math.random() * 100;
-var missClicks = 15
-
-        /**
-         * This Function will be called 20 times/second.
-         * Each time it is called, it should move the Box to a new location.
-         * If the box drifts off the screen, turn it around!
-         */
-       function update() { 
-          moveBoxTo(positionX , positionY);
-          positionX += speedX
-          positionY += speedY
-       if (positionX + 70 > boardWidth) {
-       speedX *= -1
-      }
-      if (positionX < 0) {
-        speedX *= -1
-      }
         if (positionY + 70 > boardHeight) {
-       speedY *= -1
-      }
-       if (positionY < 0) {
-        speedY *= -1
-      }
-          
+
+          speedY *= -1;
+        }
+        if (positionY < 0) {
+          speedY *= -1;
+
         }
 
-        /**
-         * This Function will be called each time the box is clicked.
-         * Each time it is called, it should perform each of the following actions:
-         * - increase the points total
-         * - increase the speed
-         * - move the box to the left side of the screen.
-         */
-        function handleBoxClick() {
-        positionX = 0;
+      }
+
+      /**
+       * This Function will be called each time the box is clicked.
+       * Each time it is called, it should perform each of the following actions:
+       * - increase the points total
+       * - increase the speed
+       * - move the box to the left side of the screen.
+       */
+      function handleBoxClick() {
+        positionX = Math.random() * boardWidth;
+        positionY = Math.random() * boardHeight;
         changeBoxText(points);
         points = points + 1;
-        speedX= 1.5 * points + 2) + 10 ;
-        speedY = (2 * points + 2) +5;
-        }
-        
-      })();
-    </script>
-  </body>
+        speedX = (1.5 * points + 2) + 10;
+        speedY = (2 * points + 2) + 5;
+      }
+
+    })();
+  </script>
+</body>
+
 </html>
