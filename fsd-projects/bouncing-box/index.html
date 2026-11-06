@@ -7,14 +7,14 @@
   <script src="jquery.min.js"></script>
   <style>
     .box {
-      width: 230px;
-      height: 230px;
+      width: 200px;
+      height: 200px;
       background-image: url(https://freepngimg.com/thumb/nyan_cat/99012-nyan-cat-png-image-high-quality.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-color: transparent;
       border: 0;
-      font-size: 0;
+      font-size: 80;
       user-select: none;
       display: block;
       position: absolute;
@@ -96,7 +96,6 @@
        * If the box drifts off the screen, turn it around!
        */
       function update() {
-        moveBoxTo(positionX, positionY);
         positionX += speedX;
         positionY += speedY;
 
@@ -115,6 +114,7 @@
           speedY *= -1;
 
         }
+        moveBoxTo(positionX, positionY);
 
       }
 

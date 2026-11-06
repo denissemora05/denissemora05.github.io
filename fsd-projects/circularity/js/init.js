@@ -20,15 +20,25 @@ var init = function (window) {
         ///////////////////
         
         // TODO 1 : Declare and initialize our variables
-
+         var circles = [];
 
 
         // TODO 2 : Create a function that draws a circle 
-        
+        function drawCircle() {
+        var circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+        physikz.addRandomVelocity(circle, canvas, 5, 5);
+        view.addChild(circle);
+        circles.push(circle);
+        }
+
 
 
         // TODO 3 : Call the drawCircle() function
-
+        drawCircle(100, 100, 25);
+        drawCircle(160, 100, 25);
+        drawCircle(220, 100, 25);
+        drawCircle(280, 100, 25);
+        drawCircle(340, 100, 25);
 
 
         // TODO 7 : Use a loop to create multiple circles
@@ -47,10 +57,21 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
+        physikz.updatePosition(circles[0]); 
+        physikz.updatePosition(circles[1]); 
+        physikz.updatePosition(circles[2]); 
+        physikz.updatePosition(circles[3]); 
+        physikz.updatePosition(circles[4]); 
+
 
             
             // TODO 5 : Call game.checkCirclePosition() on your circles
-           
+           game.checkCirclePosition(circles[0]);
+           game.checkCirclePosition(circles[1]);
+           game.checkCirclePosition(circles[2]);
+           game.checkCirclePosition(circles[3]);
+           game.checkCirclePosition(circles[4]);
+
 
             // TODO 8 / TODO 9 : Iterate over the array
            
@@ -70,9 +91,36 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
 
+if (circle.x < 0) {
+    circle.x = screenWidth;
+} 
+else if (circle.x > screenWidth) {
+    circle.x = 0;
+}
 
+if (circle.y < 0) {
+    circle.y = screenHeight;
+} 
+else if (circle.y > screenHeight) {
+    circle.y = 0;
+}
+
+if (circle.x + circle.radius < 0) {
+    circle.x = width + circle.radius;
+}
+
+if (circle.x - circle.radius > width) {
+    circle.x = -circle.radius;
+}
+
+if (circle.y + circle.radius < 0) {
+    circle.y = height + circle.radius;
+}
+
+if (circle.y - circle.radius > height) {
+    circle.y = -circle.radius;
+}
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
         
